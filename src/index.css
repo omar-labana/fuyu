@@ -5,6 +5,7 @@ background: #000;
 #root {
 background: #fff;
 width: 320px;
+min-height: calc(100vh - 64px);
 }
   
   
