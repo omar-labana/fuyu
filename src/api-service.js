@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = 'http://localhost:3001/';
+const api = 'https://salty-shelf-16163.herokuapp.com/';
 
 const getUser = async (data) => {
   const { username, password } = data;
