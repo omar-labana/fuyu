@@ -104,7 +104,7 @@ const addToWishlist = (user, jacketID) => {
       Authorization: user,
     },
   },
-    { withCredentials: true });
+  { withCredentials: true });
 };
 
 const getWishlist = async (id) => {
