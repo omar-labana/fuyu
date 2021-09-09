@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = '';
+const api = 'https://glacial-reef-65803.herokuapp.com/';
 
 const getUser = async (data) => {
   const { username, password } = data;
@@ -104,7 +104,7 @@ const addToWishlist = (user, jacketID) => {
       Authorization: user,
     },
   },
-  { withCredentials: true });
+    { withCredentials: true });
 };
 
 const getWishlist = async (id) => {
