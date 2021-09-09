@@ -37,7 +37,7 @@ const Jacket = (props) => {
 Jacket.propTypes = {
   jacket: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     image_url: PropTypes.string.isRequired,
