@@ -30,7 +30,7 @@ const Login = () => {
           type="text"
           name="username"
           placeholder="User Name"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
           value={user.username}
           onChange={(e) => setUser({ ...user, username: e.target.value })}
           required
@@ -39,7 +39,7 @@ const Login = () => {
           type="password"
           name="password"
           placeholder="Password"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           required

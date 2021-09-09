@@ -12,7 +12,7 @@ const Register = () => {
     username: '',
     email: '',
     password: '',
-    password_confirmation: '',
+    passwordConfirmation: '',
   });
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const Register = () => {
           type="text"
           name="username"
           placeholder="User Name"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
           value={user.username}
           onChange={(e) => setUser({ ...user, username: e.target.value })}
           required
@@ -41,7 +41,7 @@ const Register = () => {
           type="email"
           name="email"
           placeholder="Email"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
           required
@@ -50,7 +50,7 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Password"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           required
@@ -59,9 +59,9 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Password Confirmation"
-          className="focus:outline-none border-2 rounded-3xl	px-3 py-2 focus:ring-2 focus:ring-yellow-600"
-          value={user.password_confirmation}
-          onChange={(e) => setUser({ ...user, password_confirmation: e.target.value })}
+          className="focus:outline-none border-2 rounded-3xl px-3 py-2 focus:ring-2 focus:ring-yellow-600"
+          value={user.passwordConfirmation}
+          onChange={(e) => setUser({ ...user, passwordConfirmation: e.target.value })}
           required
         />
         <button

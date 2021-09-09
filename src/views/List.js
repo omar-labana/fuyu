@@ -20,7 +20,7 @@ const List = () => {
       </Link>
       <div className="flex items-center mx-2 py-3">
         <div className="flex flex-col gap-3">
-          {list.length > 0 ? list.map((jacket, i) => <WishCard jacket={jacket} key={i} />) : 'No items added yet.'}
+          {list.length > 0 ? list.map((jacket) => <WishCard jacket={jacket} key={jacket.id} />) : 'No items added yet.'}
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const checkLoginStatus = async (status) => {
           loggedInStatus: 'LOGGED_IN',
           user: response.data.user,
         };
-      } else if (!response.data.logged_in & (status === 'LOGGED_IN')) {
+      } else if (!response.data.logged_in && (status === 'LOGGED_IN')) {
         state = {
           loggedInStatus: 'NOT_LOGGED_IN',
           user: {},
@@ -65,7 +65,7 @@ const checkLoginStatus = async (status) => {
 
 const registerUser = async (data) => {
   const {
-    username, email, password, password_confirmation,
+    username, email, password, passwordConfirmation,
   } = data;
   await axios
     .post(
@@ -75,15 +75,11 @@ const registerUser = async (data) => {
           username,
           email,
           password,
-          password_confirmation,
+          password_confirmation: passwordConfirmation,
         },
       },
       { withCredentials: true },
     )
-    .then((response) => {
-      if (response.data.status === 'created') {
-      }
-    })
     .catch((error) => {
       console.log('registration error', error);
     });
@@ -112,12 +108,15 @@ const addToWishlist = (user, jacketID) => {
 };
 
 const getWishlist = async (id) => {
-  let list;
-  await axios.get(`${api}whishlists/${id}`)
-    .then((res) => list = res.data);
+  const list = await axios.get(`${api}whishlists/${id}`)
+    .then((res) => res.data);
   return list;
 };
 
 export {
-  getUser, checkLoginStatus, logOut, registerUser, getJackets, getJacketService, addToWishlist, getWishlist,
+  getUser, checkLoginStatus, logOut, registerUser, getJackets, getJacketService,
+};
+
+export {
+  addToWishlist, getWishlist,
 };

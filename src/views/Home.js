@@ -14,11 +14,15 @@ const Home = () => {
   const target = jackets[id];
   return (
     <div className="flex items-center mx-2 py-3">
-      <i className="fas fa-arrow-left text-white bg-yellow-500 rounded-full p-3" onClick={() => setId(id - 1 === -1 ? 0 : id - 1)} />
+      <button type="button" onClick={() => setId(id - 1 === -1 ? 0 : id - 1)}>
+        <i className="fas fa-arrow-left text-white bg-yellow-500 rounded-full p-3" />
+      </button>
       <div>
         {target ? <Jacket jacket={target} /> : ''}
       </div>
-      <i className="fas fa-arrow-right text-white bg-yellow-500 rounded-full p-3" onClick={() => setId(id + 1 === jackets.length ? id : id + 1)} />
+      <button type="button" onClick={() => setId(id + 1 === jackets.length ? id : id + 1)}>
+        <i className="fas fa-arrow-right text-white bg-yellow-500 rounded-full p-3" />
+      </button>
     </div>
   );
 };

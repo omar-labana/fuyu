@@ -1,5 +1,8 @@
+/* eslint-disable camelcase */
+
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import PropTypes from 'prop-types';
 
 import { addToWishlist } from '../api-service';
 
@@ -20,6 +23,10 @@ const Wish = (props) => {
       Add to your Wishlist
     </button>
   );
+};
+
+Wish.propTypes = {
+  id: PropTypes.number.isRequired,
 };
 
 export default Wish;

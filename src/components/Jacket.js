@@ -1,5 +1,8 @@
+/* eslint-disable camelcase */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Jacket = (props) => {
   const { jacket } = props;
@@ -29,6 +32,16 @@ const Jacket = (props) => {
       </div>
     </div>
   );
+};
+
+Jacket.propTypes = {
+  jacket: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Jacket;
