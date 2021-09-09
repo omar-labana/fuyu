@@ -3,23 +3,23 @@ import { getJacketService } from '../../api-service';
 
 /* eslint-disable no-param-reassign */
 export const getJacketDetails = createAsyncThunk(
-    'jacket/getJacket',
-    async (id) => {
-        const data = await getJacketService(id)
-        return data;
-    },
+  'jacket/getJacket',
+  async (id) => {
+    const data = await getJacketService(id);
+    return data;
+  },
 );
 
 const jacketSlice = createSlice({
-    name: 'jacket',
-    initialState: {
-        jacket: {},
+  name: 'jacket',
+  initialState: {
+    jacket: {},
+  },
+  extraReducers: {
+    [getJacketDetails.fulfilled]: (state, { payload }) => {
+      state.jacket = payload;
     },
-    extraReducers: {
-        [getJacketDetails.fulfilled]: (state, { payload }) => {
-            state.jacket = payload
-        },
-    },
+  },
 });
 /* eslint-enable no-param-reassign */
 

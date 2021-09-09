@@ -3,23 +3,23 @@ import { getWishlist } from '../../api-service';
 
 /* eslint-disable no-param-reassign */
 export const getList = createAsyncThunk(
-    'list/getList',
-    async (id) => {
-        const data = await getWishlist(id)
-        return data;
-    },
+  'list/getList',
+  async (id) => {
+    const data = await getWishlist(id);
+    return data;
+  },
 );
 
 const listSlice = createSlice({
-    name: 'list',
-    initialState: {
-        list: [],
+  name: 'list',
+  initialState: {
+    list: [],
+  },
+  extraReducers: {
+    [getList.fulfilled]: (state, { payload }) => {
+      state.list = payload;
     },
-    extraReducers: {
-        [getList.fulfilled]: (state, { payload }) => {
-            state.list = payload
-        },
-    },
+  },
 });
 /* eslint-enable no-param-reassign */
 

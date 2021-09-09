@@ -1,12 +1,11 @@
 body {
-background: #000;
+  background: #000;
 }
 
 #root {
-background: #fff;
-width: 320px;
-background-color: #F7F5FA;
-min-height: calc(100vh);
+  background: #fff;
+  width: 320px;
+  background-color: #f7f5fa;
+  min-height: calc(100vh);
 }
-  
-  
+

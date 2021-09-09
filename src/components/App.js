@@ -1,17 +1,16 @@
-
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Header from './Header';
 import Home from '../views/Home';
 import Login from '../views/auth/Login';
 import Register from '../views/auth/Register';
 import JacketDetails from '../views/JacketDetails';
 import List from '../views/List';
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { getUser } from '../redux/slices/user';
 
 const App = () => {
-  const status = "NOT_LOGGED_IN"
+  const status = 'NOT_LOGGED_IN';
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser(status));
@@ -31,7 +30,7 @@ const App = () => {
         </Switch>
       </BrowserRouter>
     </>
-  )
+  );
 };
 
 export default App;
