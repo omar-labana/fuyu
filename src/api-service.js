@@ -89,4 +89,11 @@ const registerUser = async (data) => {
         });
 }
 
-export { getUser, checkLoginStatus, logOut, registerUser }
+const getJackets = async () => {
+    const jackets = await axios.get(`${api}jackets`)
+        .then(res => res.data);
+
+    return jackets
+}
+
+export { getUser, checkLoginStatus, logOut, registerUser, getJackets }
