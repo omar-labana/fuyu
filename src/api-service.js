@@ -29,7 +29,7 @@ const getUser = async (data) => {
 
 const logOut = async () => {
     await axios
-        .delete("http://localhost:3001/logout", { withCredentials: true })
+        .delete(`${api}logout`, { withCredentials: true })
         .catch(error => {
             console.log("logout error", error);
         });
@@ -38,7 +38,7 @@ const logOut = async () => {
 const checkLoginStatus = async (status) => {
     let state;
     await axios
-        .get("http://localhost:3001/logged_in", { withCredentials: true })
+        .get(`${api}logged_in`, { withCredentials: true })
         .then(response => {
             if (response.data.logged_in && status === "NOT_LOGGED_IN") {
                 state = {
@@ -67,7 +67,7 @@ const registerUser = async (data) => {
     const { username, email, password, password_confirmation } = data;
     await axios
         .post(
-            "http://localhost:3001/registrations",
+            `${api}registrations`,
             {
                 user: {
                     username: username,
