@@ -27,7 +27,7 @@ const Header = () => {
     }
     const out = () => (
         <nav className="flex items-center justify-between mx-3">
-            <button type="button" className="bg-yellow-600 p-2 rounded text-white" onClick={handleClick}> <i className="fas fa-list-ul"></i> View Wishlist</button>
+            <Link to="/list" className="bg-yellow-600 p-2 rounded text-white"> <i className="fas fa-list-ul"></i> View Wishlist</Link>
             <button type="button" className="bg-yellow-600 p-2 rounded text-white" onClick={handleClick}>Log Out <i className="fas fa-sign-out-alt"></i></button>
         </nav>
     )
