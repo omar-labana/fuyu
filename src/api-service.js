@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = 'https://glacial-reef-65803.herokuapp.com/';
+const api = '';
 
 const getUser = async (data) => {
   const { username, password } = data;

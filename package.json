@@ -1,6 +1,7 @@
 {
   "name": "fuyu",
   "version": "0.1.0",
+  "proxy":"https://glacial-reef-65803.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
