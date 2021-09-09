@@ -18,7 +18,7 @@
 
 # Live demo
 
-[Live demo]()
+[Live demo](https://fuyu-jackets.herokuapp.com/)
 
 # Getting Started
 
