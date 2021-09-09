@@ -3,6 +3,7 @@ import { getUser } from '../../api-service'
 import { useDispatch } from 'react-redux';
 import { updateUser } from '../../redux/slices/user'
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -11,14 +12,17 @@ const Login = () => {
         username: '',
         password: ''
     })
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        getUser(user)
-        dispatch(updateUser(user))
+        const data = await getUser(user)
+        dispatch(updateUser(data))
         history.push("/");
     }
     return (
         <main className="h-full flex flex-col items-center text-lg">
+            <Link to="/" className="self-start ml-5">
+                <i className="fas fa-arrow-left text-yellow-800 text-3xl"></i>
+            </Link>
             <h2 className="text-3xl my-4">Log In</h2>
             <p className="text-center text-base mx-6">Hello there, Log in and start making your wishlist!</p>
             <form onSubmit={handleSubmit} className="flex flex-col items-center gap-5 my-4">
