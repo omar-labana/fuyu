@@ -26,7 +26,7 @@ const userSlice = createSlice({
     reducers: {
         updateUser: (state, action) => {
             state.loggedInStatus = "LOGGED_IN"
-            state.user = action.payload
+            state.user = action.payload.user
         },
         removeUser: (state) => {
             state.loggedInStatus = "NOT_LOGGED_IN"
