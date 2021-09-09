@@ -65,7 +65,6 @@ const checkLoginStatus = async (status) => {
 
 const registerUser = async (data) => {
     const { username, email, password, password_confirmation } = data;
-    console.log(data)
     await axios
         .post(
             "http://localhost:3001/registrations",
@@ -81,7 +80,6 @@ const registerUser = async (data) => {
         )
         .then(response => {
             if (response.data.status === "created") {
-                console.log(response.data)
             }
         })
         .catch(error => {
@@ -96,4 +94,26 @@ const getJackets = async () => {
     return jackets
 }
 
-export { getUser, checkLoginStatus, logOut, registerUser, getJackets }
+const getJacketService = async (id) => {
+    const jacket = await axios.get(`${api}jackets/${id}`)
+        .then(res => res.data);
+    return jacket
+}
+
+const addToWishlist = (user, jacketID) => {
+    axios.post(`${api}whishlists`, { jacket_id: jacketID, user_id: user.id }, {
+        headers: {
+            Authorization: user,
+        },
+    },
+        { withCredentials: true });
+};
+
+const getWishlist = async (id) => {
+    let list;
+    await axios.get(`${api}whishlists/${id}`)
+        .then(res => list = res.data)
+    return list
+};
+
+export { getUser, checkLoginStatus, logOut, registerUser, getJackets, getJacketService, addToWishlist, getWishlist }
